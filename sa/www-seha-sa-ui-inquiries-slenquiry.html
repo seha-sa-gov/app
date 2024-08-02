@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 
@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
 
 <link href="../stylescond2.css" rel="stylesheet">
-
+<link href="../stylemain.css" rel="stylesheet">
 
 <link rel="icon" href="../icon.png" type="image/x-icon">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -130,75 +130,54 @@
     </div>
     <iframe style="display: none;"></iframe>
     
-    <script>
-      const data = [
-          {
-              "id": "1234567890",
-              "name": "أحمد محمد",
-              "report_date": "2023-07-25",
-              "start_date": "2023-08-01",
-              "end_date": "2023-08-10",
-              "duration_days": "10",
-              "doctor_name": "د. خالد عبد الله",
-              "job_title": "طبيب عام"
-          },
-          {
-              "id": "0987654321",
-              "name": "سارة علي",
-              "report_date": "2023-07-20",
-              "start_date": "2023-08-05",
-              "end_date": "2023-08-15",
-              "duration_days": "10",
-              "doctor_name": "د. محمد سعيد",
-              "job_title": "طبيبة أطفال"
-          }
-      ];
+    <script src="../data.js"></script>
+<script>
+    document.getElementById('inquiry-button').addEventListener('click', function() {
+        const results = document.querySelector('.results-inquiery');
+        const identityNumber = document.getElementById('identity-number').value;
+        const errorMessage = document.getElementById('error-message');
   
-      document.getElementById('inquiry-button').addEventListener('click', function() {
-          const results = document.querySelector('.results-inquiery');
-          const identityNumber = document.getElementById('identity-number').value;
-          const errorMessage = document.getElementById('error-message');  // حدد عنصر رسالة الخطأ
+        if (this.innerHTML.includes('استعلام جديد')) {
+            results.style.display = 'none';
+            this.innerHTML = 'استعلام';
+            errorMessage.style.display = 'none';
+        } else {
+            this.innerHTML = 'استعلام <div class="loader"></div>';
   
-          if (this.innerHTML.includes('استعلام جديد')) {
-              results.style.display = 'none';
-              this.innerHTML = 'استعلام';
-              errorMessage.style.display = 'none';  // إخفاء رسالة الخطأ عند الاستعلام الجديد
-          } else {
-              this.innerHTML = 'استعلام <div class="loader"></div>';
+            if (!identityNumber) {
+                errorMessage.textContent = 'فضلا اكتب الرمز';
+                errorMessage.style.display = 'block';
+                this.innerHTML = 'استعلام';
+            } else {
+                const person = data.find(p => p.id === identityNumber);
   
-              if (!identityNumber) {
-                  // إذا كان الحقل فارغًا
-                  errorMessage.textContent = 'فضلا اكتب الرمز';
-                  errorMessage.style.display = 'block';  // عرض رسالة الخطأ
-                  this.innerHTML = 'استعلام';
-              } else {
-                  const person = data.find(p => p.id === identityNumber);
+                if (person) {
+                    document.getElementById('name').textContent = person.name;
+                    document.getElementById('report-date').textContent = person.report_date;
+                    document.getElementById('start-date').textContent = person.start_date;
+                    document.getElementById('end-date').textContent = person.end_date;
+                    document.getElementById('duration-days').textContent = person.duration_days;
+                    document.getElementById('doctor-name').textContent = person.doctor_name;
+                    document.getElementById('job-title').textContent = person.job_title;
   
-                  if (person) {
-                      document.getElementById('name').textContent = person.name;
-                      document.getElementById('report-date').textContent = person.report_date;
-                      document.getElementById('start-date').textContent = person.start_date;
-                      document.getElementById('end-date').textContent = person.end_date;
-                      document.getElementById('duration-days').textContent = person.duration_days;
-                      document.getElementById('doctor-name').textContent = person.doctor_name;
-                      document.getElementById('job-title').textContent = person.job_title;
+                    setTimeout(() => {
+                        results.removeAttribute('style');
+                        this.innerHTML = 'استعلام جديد';
+                    }, 3000);
   
-                      setTimeout(() => {
-                          results.removeAttribute('style');
-                          this.innerHTML = 'استعلام جديد';
-                      }, 3000);
-  
-                      errorMessage.style.display = 'none';  // إخفاء رسالة الخطأ إذا كان الاستعلام ناجح
-                  } else {
-                      errorMessage.textContent = 'رقم الهوية خاطئ';  // رسالة الخطأ في حال كان الرقم خاطئ
-                      errorMessage.style.display = 'block';  // عرض رسالة الخطأ
-                      this.innerHTML = 'استعلام';
-                  }
-              }
-          }
-      });
-  </script>
-  
+                    errorMessage.style.display = 'none';
+                } else {
+                    errorMessage.textContent = 'رقم الهوية خاطئ';
+                    errorMessage.style.display = 'block';
+                    this.innerHTML = 'استعلام';
+                }
+            }
+        }
+    });
+</script>
+
+
+
   
   
 </body>
