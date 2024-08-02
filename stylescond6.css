@@ -1,0 +1,26 @@
+:root {
+    --ant-primary-color: rgb(48, 109, 181);
+--ant-primary-color-disabled: #d3e0e8;
+--ant-primary-color-hover: #538bc2;
+--ant-primary-color-active: #1f508f;
+--ant-primary-color-outline: rgba(48, 109, 181, 0.2);
+--ant-primary-color-deprecated-bg: #e6eff5;
+--ant-primary-color-deprecated-border: #a4c4db;
+--ant-primary-1: #e6eff5;
+--ant-primary-2: #d3e0e8;
+--ant-primary-3: #a4c4db;
+--ant-primary-4: #7aa7cf;
+--ant-primary-5: #538bc2;
+--ant-primary-6: #306db5;
+--ant-primary-7: #1f508f;
+--ant-primary-8: #123469;
+--ant-primary-9: #081d42;
+--ant-primary-10: #030b1c;
+--ant-primary-color-deprecated-l-35: rgb(174, 201, 234);
+--ant-primary-color-deprecated-l-20: rgb(114, 161, 217);
+--ant-primary-color-deprecated-t-20: rgb(89, 138, 196);
+--ant-primary-color-deprecated-t-50: rgb(152, 182, 218);
+--ant-primary-color-deprecated-f-12: rgba(48, 109, 181, 0.12);
+--ant-primary-color-active-deprecated-f-30: rgba(230, 239, 245, 0.3);
+--ant-primary-color-active-deprecated-d-02: rgb(223, 234, 242);
+  }
