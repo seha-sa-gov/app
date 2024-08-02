@@ -10,13 +10,13 @@ const data = [
         "job_title": "طبيب عام"
     },
     {
-        "id": "0987654321",
-        "name": "سارة علي",
-        "report_date": "2023-07-20",
-        "start_date": "2023-08-05",
-        "end_date": "2023-08-15",
-        "duration_days": "10",
-        "doctor_name": "د. محمد سعيد",
-        "job_title": "طبيبة أطفال"
+        "id": "2278401449",
+        "name": "ﻧﺬﻳﺮ ﺣﺴﻦ ﻣﺤﻤﺪ اﻟﺤﻄﺎﻣﻲ",
+        "report_date": "02-08-2024",
+        "start_date": "02-08-2024",
+        "end_date": "06-08-2024",
+        "duration_days": "5",
+        "doctor_name": "واﺋﻞ ﻋﺒﺪاﻻﻟﻪ ﴎ اﻟﺨﺘﻢ ﻣﺤﻤﺪ",
+        "job_title": "ﻃﺐ ﺑﴩي"
     }
 ];
