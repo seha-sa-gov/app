@@ -17,6 +17,16 @@ const data = [
         "end_date": "06-08-2024",
         "duration_days": "5",
         "doctor_name": "واﺋﻞ ﻋﺒﺪاﻻﻟﻪ ﴎ اﻟﺨﺘﻢ ﻣﺤﻤﺪ",
-        "job_title": "ﻃﺐ ﺑﴩي"
+        "job_title": "ﻃﺐ ﺑشري"
+    },
+    {
+        "id": "2279861449",
+        "name": "محمد خالد احمد",
+        "report_date": "02-08-2024",
+        "start_date": "02-08-2024",
+        "end_date": "10-08-2024",
+        "duration_days": "9",
+        "doctor_name": "محمد عبدالله علي",
+        "job_title": "ﻃﺐ ﺑشري"
     }
 ];
